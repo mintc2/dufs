@@ -8,6 +8,14 @@ Dufs is a distinctive utility file server that supports static serving, uploadin
 
 ![demo](https://user-images.githubusercontent.com/4012553/220513063-ff0f186b-ac54-4682-9af4-47a9781dee0d.png)
 
+## Fork
+
+This fork adds an alternative vibe-coded UI, the original one was bit too boring for my taste.
+
+![alt-ui-demo](https://github.com/user-attachments/assets/d152c542-c3e7-47f9-a427-f5eb8b8523f1)
+
+Refer to the [Customize UI](#customize-ui) section for the instructions on how to use it.
+
 ## Features
 
 - Serve static files
