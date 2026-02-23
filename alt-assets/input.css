@@ -1,0 +1,366 @@
+@import "tailwindcss";
+
+/* Alliance No.2 Font Family */
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Light Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Regular Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Medium Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 SemiBold Italic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 ExtraBold Italic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Alliance No.2 Black Italic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Custom Theme - Palette 4: Teal Primary, Blue Grey Neutrals */
+@theme {
+  --font-sans: 'Alliance No.2', system-ui, -apple-system, sans-serif;
+  
+  /* Blue Grey Neutrals */
+  --color-surface-50: #F0F4F8;
+  --color-surface-100: #D9E2EC;
+  --color-surface-200: #BCCCDC;
+  --color-surface-300: #9FB3C8;
+  --color-surface-400: #829AB1;
+  --color-surface-500: #627D98;
+  --color-surface-600: #486581;
+  --color-surface-700: #334E68;
+  --color-surface-800: #243B53;
+  --color-surface-850: #1a3347;
+  --color-surface-900: #102A43;
+  --color-surface-950: #0a1f33;
+  
+  /* Teal Primary as accent */
+  --color-accent-300: #65D6AD;
+  --color-accent-400: #3EBD93;
+  --color-accent-500: #27AB83;
+  --color-accent-600: #199473;
+  --color-accent-700: #147D64;
+  
+  /* Success - Teal lighter */
+  --color-success: #3EBD93;
+  
+  /* Danger - from supporting red */
+  --color-danger: #D64545;
+  
+  /* Link color - Blue from supporting */
+  --color-link: #4098D7;
+  --color-link-hover: #62B0E8;
+  
+  /* Purple accent for special elements */
+  --color-purple: #724BB7;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-surface-950 text-surface-200 min-h-screen;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-700 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-600;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .hidden {
+    display: none !important;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hide scrollbar */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-900;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-500 text-surface-950 hover:bg-accent-400 focus:ring-accent-500;
+  }
+  
+  .btn-ghost {
+    @apply text-surface-400 hover:text-surface-200 hover:bg-surface-800/50 focus:ring-surface-600;
+  }
+  
+  .icon-btn {
+    @apply p-2 rounded-lg text-surface-400 hover:text-surface-200 hover:bg-surface-800/50 transition-colors duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-surface-600 focus:ring-offset-1 focus:ring-offset-surface-900;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-surface-900 border border-surface-700 rounded-lg;
+    @apply text-surface-100 placeholder:text-surface-500;
+    @apply focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30;
+    @apply transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-surface-900/50 backdrop-blur-sm border border-surface-800 rounded-xl;
+  }
+  
+  .file-row {
+    @apply flex items-center gap-3 px-3 sm:px-4 py-2.5 sm:py-3 hover:bg-surface-800/40 transition-colors duration-150 border-b border-surface-800/50 last:border-b-0;
+  }
+  
+  .file-row-grid {
+    @apply grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_120px_80px_auto] gap-2 sm:gap-4 items-center w-full min-w-0;
+  }
+  
+  .action-link {
+    @apply p-2 sm:p-1.5 rounded-md text-surface-400 hover:text-surface-200 hover:bg-surface-700/50 transition-colors duration-150 touch-manipulation;
+  }
+}
+
+/* File actions - subtle on mobile, hover-reveal on desktop */
+.file-actions {
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.file-row:hover .file-actions,
+.file-actions:focus-within {
+  opacity: 1;
+}
+
+/* On mobile, always show actions at full opacity since there's no hover */
+@media (max-width: 639px) {
+  .file-actions {
+    opacity: 1;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in 0.25s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.02s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.04s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.06s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.08s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.10s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.12s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.14s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.16s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.18s; }
+.stagger-children > *:nth-child(10) { animation-delay: 0.20s; }
+.stagger-children > *:nth-child(n+11) { animation-delay: 0.22s; }
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+  body {
+    @apply bg-surface-100 text-surface-800;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-200;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-400;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-500;
+  }
+  
+  .card {
+    @apply bg-white/80 border-surface-200;
+  }
+  
+  .file-row {
+    @apply hover:bg-surface-100 border-surface-200/50;
+  }
+  
+  .input-field {
+    @apply bg-white border-surface-300 text-surface-900 placeholder:text-surface-400;
+  }
+  
+  .icon-btn {
+    @apply text-surface-500 hover:text-surface-800 hover:bg-surface-200/50;
+  }
+  
+  .action-link {
+    @apply text-surface-400 hover:text-surface-700 hover:bg-surface-200/50;
+  }
+  
+  .header-bar {
+    background-color: rgb(255 255 255 / 0.9) !important;
+    border-color: var(--color-surface-200) !important;
+  }
+}
+
+/* Editor styles */
+.editor-textarea {
+  @apply w-full h-[calc(100vh-8rem)] p-4 bg-surface-900 border border-surface-700 rounded-lg;
+  @apply text-surface-100 font-mono text-sm leading-relaxed;
+  @apply focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30;
+  @apply resize-none;
+}
+
+@media (prefers-color-scheme: light) {
+  .editor-textarea {
+    @apply bg-white border-surface-300 text-surface-900;
+  }
+}
+
+/* Drop zone indicator */
+.drop-active {
+  @apply ring-2 ring-accent-500 ring-inset bg-accent-500/5;
+}
